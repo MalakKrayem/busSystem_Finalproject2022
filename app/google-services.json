@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "748690968794",
+    "project_id": "bussystem-finalproject",
+    "storage_bucket": "bussystem-finalproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748690968794:android:bbd63839d6430626dfd5e3",
+        "android_client_info": {
+          "package_name": "com.example.bussystem_finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748690968794-hi65m10rqtii49jbckquhbik0k6l4jul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR9zjjWPyXN6baah_8GaX3gYHWdF7pq4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748690968794-hi65m10rqtii49jbckquhbik0k6l4jul.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
