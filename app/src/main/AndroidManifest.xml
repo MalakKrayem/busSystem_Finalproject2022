@@ -10,14 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusSystem_Finalproject">
         <activity
+            android:name=".userUI.UserMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".adminUI.AdminsMainActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".enterUI.ForgetPassword"
             android:exported="false" />
@@ -33,7 +30,11 @@
         <activity
             android:name=".Splash.Splash"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data

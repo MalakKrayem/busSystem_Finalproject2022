@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bussystem_finalproject.R;
+import com.example.bussystem_finalproject.adminUI.AdminsMainActivity;
+import com.example.bussystem_finalproject.userUI.UserMainActivity;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -48,7 +50,22 @@ public class Login extends AppCompatActivity {
                 Task<AuthResult> result=auth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString());
                 result.addOnCompleteListener(task -> {
                     if(task.isSuccessful()){
-                        Toast.makeText(Login.this, "Welcome", Toast.LENGTH_SHORT).show();
+                        Intent i=new Intent(getApplicationContext(), UserMainActivity.class);
+                        startActivity(i);
+                    }else{
+                        Toast.makeText(Login.this, "Faild", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+        loginadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Task<AuthResult> result=auth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString());
+                result.addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
+                        Intent i=new Intent(getApplicationContext(), AdminsMainActivity.class);
+                        startActivity(i);
                     }else{
                         Toast.makeText(Login.this, "Faild", Toast.LENGTH_SHORT).show();
                     }
