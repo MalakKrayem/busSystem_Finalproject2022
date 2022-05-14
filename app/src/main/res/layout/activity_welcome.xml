@@ -49,13 +49,12 @@
 
     <Button
         android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_margin="50dp"
         android:foreground="@drawable/corner"
         android:text="Next"
         android:textSize="20dp"
-        android:paddingHorizontal="30dp"
         android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
