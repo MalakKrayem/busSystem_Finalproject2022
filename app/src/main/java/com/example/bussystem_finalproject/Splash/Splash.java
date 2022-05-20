@@ -14,6 +14,7 @@ import android.widget.ImageView;
 
 import com.example.bussystem_finalproject.R;
 import com.example.bussystem_finalproject.enterUI.Welcome;
+import com.example.bussystem_finalproject.userUI.UserMainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -39,7 +40,7 @@ public class Splash extends AppCompatActivity {
                     finish();
                 }else{
                     //Go to home
-                    Intent i = new Intent(getApplicationContext(), Welcome.class);
+                    Intent i = new Intent(getApplicationContext(), UserMainActivity.class);
                     startActivity(i);
                     finish();
                 }

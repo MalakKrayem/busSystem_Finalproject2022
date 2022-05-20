@@ -56,7 +56,6 @@ public class UserHomeFragment extends Fragment {
         rv_trips.setLayoutManager(manager);
         rv_trips.setAdapter(new TripAdapter(trips, context));
         Log.d("mm","nice");
-
         return view;
 
     }
