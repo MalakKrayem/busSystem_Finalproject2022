@@ -39,10 +39,11 @@ public class ForgetPassword extends AppCompatActivity {
         sendCode=findViewById(R.id.btn_sendCode);
         verifyCode=findViewById(R.id.btn_verifycode);
 
+
         sendCode.setOnClickListener(view -> {
 //            PhoneAuthOptions options = PhoneAuthOptions.newBuilder()
-//                    .setPhoneNumber(edPhone.getText().toString())
-//                    .setActivity(PhoneVerificationActivity.this)
+//                    .setPhoneNumber(phone.getText().toString())
+//                    .setActivity(ForgetPassword.this)
 //                    .setCallbacks(callback)
 //                    .setTimeout(30L, TimeUnit.SECONDS)
 //                    .build();
@@ -51,50 +52,50 @@ public class ForgetPassword extends AppCompatActivity {
         });
 
         verifyCode.setOnClickListener(view -> {
-//            String codeNum = code.getText().toString();
-//
-//
-//            AuthCredential phoneCredential = PhoneAuthProvider.getCredential(verificationId ,code );
-//
-//            auth.signInWithCredential(phoneCredential)
-//                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<AuthResult> task) {
-//
-//                            if (task.isSuccessful()){
-//                                Log.d("DDDD" , "VerifyPhone: Successful go To Home");
-//                            }else{
-//                                Log.d("DDDD" , "VerifyPhone: Failed " + task.getException().getLocalizedMessage());
-//                            }
-//                        }
-//                    });
+            String codeNum = code.getText().toString();
+
+
+            AuthCredential phoneCredential = PhoneAuthProvider.getCredential(verificationId ,codeNum );
+
+            auth.signInWithCredential(phoneCredential)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+
+                            if (task.isSuccessful()){
+                                Log.d("DDDD" , "VerifyPhone: Successful go To Home");
+                            }else{
+                                Log.d("DDDD" , "VerifyPhone: Failed " + task.getException().getLocalizedMessage());
+                            }
+                        }
+                    });
         });
 
     }
-//    private PhoneAuthProvider.OnVerificationStateChangedCallbacks callback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-//        @Override
-//        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-//            //Go to home
-//            Log.d("DDDD", "PhoneVerification: onVerificationCompleted");
-//        }
-//
-//        @Override
-//        public void onVerificationFailed(@NonNull FirebaseException e) {
-//            Toast.makeText(ForgetPassword.this, "Verified code faild!", Toast.LENGTH_SHORT).show();
-//            Log.d("DDDD", "PhoneVerification: onVerificationFailed " + e.getLocalizedMessage());
-//
-//        }
-//
-//
-//        @Override
-//        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-//            super.onCodeSent(s, forceResendingToken);
-//
-//
-//            PhoneVerificationActivity.this.verificationId = s;
-//        }
-//    };
-//
-//
-//    private String verificationId = "";
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks callback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+        @Override
+        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+            //Go to home
+            Log.d("DDDD", "PhoneVerification: onVerificationCompleted");
+        }
+
+        @Override
+        public void onVerificationFailed(@NonNull FirebaseException e) {
+            Toast.makeText(ForgetPassword.this, "Verified code faild!", Toast.LENGTH_SHORT).show();
+            Log.d("DDDD", "PhoneVerification: onVerificationFailed " + e.getLocalizedMessage());
+
+        }
+
+
+        @Override
+        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+            super.onCodeSent(s, forceResendingToken);
+
+
+            ForgetPassword.this.verificationId = s;
+        }
+    };
+
+
+    private String verificationId = "";
 }

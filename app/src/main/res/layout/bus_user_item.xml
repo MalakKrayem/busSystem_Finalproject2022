@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="10dp"
+        android:elevation="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="20dp"
         android:foreground="@drawable/corner"
         app:layout_constraintStart_toStartOf="parent">
         <LinearLayout
@@ -30,7 +33,7 @@
                 android:layout_weight="1"
                 android:padding="20dp">
                 <TextView
-                    android:id="@+id/tv_source"
+                    android:id="@+id/tv_sourceUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Source"
@@ -41,7 +44,7 @@
                     android:textStyle="bold"
                     android:fontFamily="@font/playfair_display_bold"/>
                 <TextView
-                    android:id="@+id/tv_destination"
+                    android:id="@+id/tv_destinationUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Destination"
@@ -60,14 +63,14 @@
 
                 android:layout_gravity="center">
                 <TextView
-                    android:id="@+id/tv_seats"
+                    android:id="@+id/tv_seatsUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="20 Seats"
                     android:textStyle="bold"
                     android:layout_gravity="center_vertical"/>
                 <TextView
-                    android:id="@+id/tv_price"
+                    android:id="@+id/tv_priceUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="100$"
@@ -77,12 +80,12 @@
 
             </LinearLayout>
             <Button
-                android:id="@+id/btn_deleteBus"
+                android:id="@+id/btn_bookTrip"
                 android:layout_width="20dp"
                 android:layout_weight="1"
                 android:layout_height="40dp"
-                android:background="@drawable/ic_baseline_delete_24"
-                android:layout_gravity="center"/>
+                android:background="@drawable/ic_baseline_arrow_circle_right_24"
+                android:layout_gravity="center_vertical"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

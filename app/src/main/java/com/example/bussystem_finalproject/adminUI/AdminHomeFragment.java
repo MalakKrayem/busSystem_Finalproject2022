@@ -50,10 +50,5 @@ public class AdminHomeFragment extends Fragment {
         buses.setAdapter(new BusAdapter(busesArray,context));
         return view;
     }
-    private ArrayList<Bus> addBuses(){
-        busesArray.add(new Bus("Gaza","Rafah",50,100));
-        busesArray.add(new Bus("Gaza","Quds",30,200));
-        busesArray.add(new Bus("Hebron","Rafah",100,150));
-        return  busesArray;
-    }
+
 }

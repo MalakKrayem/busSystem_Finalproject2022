@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,12 +51,14 @@ public class BusAdapter extends RecyclerView.Adapter<BusAdapter.BusHolder> {
 
     public class BusHolder extends RecyclerView.ViewHolder{
         TextView source,destination,price,seats;
+        Button delete;
         public BusHolder(@NonNull View itemView) {
             super(itemView);
             source=itemView.findViewById(R.id.tv_source);
             destination=itemView.findViewById(R.id.tv_destination);
             price=itemView.findViewById(R.id.tv_price);
             seats=itemView.findViewById(R.id.tv_seats);
+            delete=itemView.findViewById(R.id.btn_deleteBus);
 
         }
     }
